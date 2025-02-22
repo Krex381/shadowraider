@@ -15,11 +15,6 @@
 2. Gerekli yetkileri verin
 3. Hazırsınız!
 
-## 🛠️ Komutlar
-- `/raid-koruma` - Raid korumasını aktif eder
-- `/ayarlar` - Bot ayarlarını düzenler
-- `/yardım` - Tüm komutları listeler
-
 ## 📞 Destek
 Herhangi bir sorunuz veya sorununuz varsa:
 - [Discord Sunucumuza](https://discord.gg/shadowraider) katılın
