@@ -4,7 +4,7 @@
 [![Discord](https://img.shields.io/badge/Discord-Katıl-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/shadowraider)
 
 ## 🔧 Kullanım
-1. [Botu Sunucunuza Ekleyin](https://discord.com/oauth2/authorize?client_id=1342586977072975924)
+1. [Botu Sunucunuza Ekleyin](https://discord.com/oauth2/authorize?client_id=1342995437019467847)
 2. Gerekli yetkileri verin
 3. Hazırsınız!
 
