@@ -139,18 +139,23 @@ html {
     bottom: 0;
     z-index: 3;
     pointer-events: none;
+    will-change: transform, opacity;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .waifu-container.right {
     right: 0;
-    animation: fadeInFloatRight 1.5s ease-out forwards;
+    animation: fadeInFloatRight 2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+               floatAnimation 6s ease-in-out infinite;
 }
 
 .waifu-container.left {
     left: 0;
     top: 0;
     bottom: auto;
-    animation: fadeInFloatTop 1.5s ease-out forwards;
+    animation: fadeInFloatTop 2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+               floatAnimationTop 6s ease-in-out infinite;
 }
 
 @keyframes fadeInFloatRight {
@@ -193,6 +198,20 @@ html {
     opacity: 0.65; /* Reduced from 0.85 */
     filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.4)) brightness(1.1);
     position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center center;
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(1deg); }
+    75% { transform: translateY(10px) rotate(-1deg); }
+}
+
+@keyframes floatAnimationTop {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(10px, -5px) rotate(1deg); }
+    75% { transform: translate(-10px, 5px) rotate(-1deg); }
 }
 
 .waifu-container::before {
@@ -288,6 +307,14 @@ html {
     .waifu-container.right {
         right: -20%;
     }
+    .waifu-container.right {
+        transform: scale(0.8);
+        right: -10%;
+    }
+    .waifu-container.left {
+        transform: scale(0.8);
+        left: -10%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -311,6 +338,22 @@ html {
         width: 120%;
         height: 120%;
     }
+    .waifu-container.right {
+        transform: scale(0.6);
+        right: -20%;
+    }
+    .waifu-container.left {
+        transform: scale(0.6);
+        left: -20%;
+        top: -5%;
+    }
+    .waifu-image {
+        opacity: 0.4;
+        transition: opacity 0.3s ease;
+    }
+    .waifu-container:hover .waifu-image {
+        opacity: 0.6;
+    }
 }
 
 @media (max-width: 640px) {
@@ -323,6 +366,37 @@ html {
     }
     .waifu-image {
         height: 50vh;
+    }
+    .waifu-container.right {
+        transform: scale(0.5);
+        right: -25%;
+    }
+    .waifu-container.left {
+        transform: scale(0.5);
+        left: -25%;
+        top: -10%;
+    }
+}
+
+/* Portrait Mode Adjustments */
+@media (max-width: 480px) and (orientation: portrait) {
+    .waifu-container.right {
+        transform: scale(0.4);
+        right: -30%;
+        bottom: 10%;
+    }
+    .waifu-container.left {
+        transform: scale(0.4);
+        left: -30%;
+        top: 0;
+    }
+}
+
+/* Add hover effects */
+@media (hover: hover) {
+    .waifu-container:hover .waifu-image {
+        transform: scale(1.02);
+        filter: drop-shadow(0 0 35px rgba(255, 0, 0, 0.6)) brightness(1.2);
     }
 }
 
