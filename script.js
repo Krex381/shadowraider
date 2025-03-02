@@ -46,3 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleLanguage();
     }
 });
+
+document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+});
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "F12" || 
+        (event.ctrlKey && event.shiftKey && event.key === "I") || 
+        (event.ctrlKey && event.shiftKey && event.key === "J") || 
+        (event.ctrlKey && event.key === "U")) {
+        
+        alert("Ne büyük bir oruspu çocuğusun am evladı 😆");
+        event.preventDefault();
+    }
+});
